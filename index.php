@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EVALUACION WEB1</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="bonito.css">
 </head>
 <body>
 
@@ -12,8 +13,8 @@
         
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">FRUTERA</h1>
-                <p class="lead">seleccione de nuestras calidad de frutas</p>
+                <h1 class="display-4">FRUTERA SALPICON</h1>
+                <p class="lead">seleccione de nuestras calidad de frutas para un salpicon exquisito!!!</p>
             </div>
         </div>
 
@@ -23,18 +24,34 @@
 
     <main>
 
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">INGRESE LA FRUTA DE SU ELECCION</label>
+                <input type="text" class="form-control" id="frutas" aria-describedby="emailHelp" name="frutas">      
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
             <?php
 
-                $nombre="henry ramos";
-                $Pnumero=15;
-                $Snumero=25;
+                
 
-                $sumatoria = $Pnumero + $Snumero;
+                $arreglo = array("manzana", "mango", "banano", "papaya", "piña");
 
-                echo("La suma de estos dos numeros es:" .' ' . $sumatoria);
+                if(in_array("pera" , $arreglo))
+                {
+                    echo "Si tenemos manzanas-------> ok";
+                }
+                else
+                {
+                    echo "Nada mostro no hay de esas-----> fuck!!";
+                }
 
 
+                //print_r($arreglo);
 
+                
             ?>
 
 
