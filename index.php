@@ -11,7 +11,7 @@
 
     <header>
         
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid .colorsito">
             <div class="container">
                 <h1 class="display-4">FRUTERA SALPICON</h1>
                 <p class="lead">seleccione de nuestras calidad de frutas para un salpicon exquisito!!!</p>
@@ -24,10 +24,10 @@
 
     <main>
 
-        <form>
+        <form class="mt-5" action="index.php" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">INGRESE LA FRUTA DE SU ELECCION</label>
-                <input type="text" class="form-control" id="frutas" aria-describedby="emailHelp" name="frutas">      
+                <input type="text" class="form-control" id="frutas" aria-describedby="frutas" placeholder = "fruta de su eleccion" name="frutas">      
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
