@@ -9,17 +9,78 @@
 <body>
 
     <header>
-    
-    
-    
+
+        <form action = "ejercicio4.php" method = "POST">
+            <h3>NOMINA POSTOBON</h3>
+            <div class="row">
+                <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Nombre Trabajador" name = "trabajador">
+                <div>
+                <input type="number" class="form-control" placeholder="horas Semanales" name = "horas">
+                </div>   
+            </div>
+            <button type="submit" class="btn btn-primary col-md-12 mt-5" name = "resultado">resultado</button>
+        </form>
     
     </header>
 
-
     <main>
+        
+        <h4 class = "mt-5">RESULTADOS NOMINA</h4>
+        
+        <?php if(isset($_POST["resultado"])):?>
+        
+        <?php
+
+
+            $NombreTrabajador = $_POST["trabajador"];
+            $HorasLabor = $_POST["horas"];
+            $ValorHoraSemanal = 20000;
+            $HorasExtras = 25000;
+            $TotalHorasExtra = $HorasLabor-40;
+            
+           
+
+            echo ("El trabajador" . ' '. $NombreTrabajador);
+            echo ("<br>");
+            echo ("<br>");
+            echo ("Esta semana Trabajo" . ' ' . $HorasLabor . ' ' . "horas");
+            echo ("<br>");
+            echo ("<br>");
+
+            if($HorasLabor <= 40)
+            {
+                $ValorSemana = $ValorHoraSemanal*$HorasLabor;
+                echo ("Su salario semanal es de " . ' ' . $ValorSemana);
+                echo ("<br>");
+                echo ("<br>");
+                echo ("Se le paga hora a " . ' ' . $ValorHoraSemanal);
+                
+            }
+            elseif ($HorasLabor > 40)
+            {
+                $ValorsemanaExtra = $TotalHorasExtra*$HorasExtras;
+                echo ("Total horas adicionales" . ' ' .$TotalHorasExtra);
+                echo ("<br>");
+                echo ("<br>");
+                echo ("Valor total horas adicionales es igual " . ' ' . $ValorsemanaExtra);
+            }
+            else
+            {
+                $ValorsemanaExtra = 0;
+                $ValorSemana = 0;
+            }
+
+            $ValorTotalSemana = $ValorSemana+$ValorsemanaExtra;
+            
+            echo ("<br>");
+            echo ("<br>");
+            echo ("VALOR TOTAL SEMANA" . '  ' . $ValorTotalSemana); 
+           
+
+        ?>
     
-    
-    
+        <?php endif?>
     
     </main>
 
