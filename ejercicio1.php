@@ -16,7 +16,7 @@
                 <div class="col">
                     <input type="decimal" class="form-control" placeholder="Ingrese Valor1" name = "Valor1">
                 </div>
-                <select class="form-control" id="exampleFormControlSelect1" name = "operaciones">
+                <select class="form-control" id="exampleFormControlSelect1" name = "Operaciones">
                     <option value = "+">+</option>
                     <option value = "-">-</option>
                     <option value = "*">*</option>
@@ -39,7 +39,34 @@
         <h2 class="text-center mt-5">RESULTADOS</h2>
 
         <?php if(isset($_POST["Resultado"])):?>
-        <?php ?>
+        <?php 
+        
+            $Operador = $_POST["Valor1"];
+            $Operador2 = $_POST["Valor2"];
+            $operacionesFinal = $_POST["Operaciones"];
+
+            if($operacionesFinal == "+")
+            {
+                $Resultados = $Operador+$Operador2;
+                echo ("El Resultado de la Suma es" . ' ' . $Resultados);
+            }
+            elseif ($operacionesFinal == "-")
+            {
+                $Resultados = $Operador-$Operador2;
+                echo ("El Resultado de la Resta es" . ' ' . $Resultados);
+            }
+            elseif ($operacionesFinal == "*")
+            {
+                $Resultados = $Operador*$Operador2;
+                echo ("El Resultado de la Multiplicacion es" . ' ' . $Resultados);
+            }
+            else
+            {
+                $Resultados = $Operador/$Operador2;
+                echo ("El Resultado de la Division es" . ' ' . $Resultados);
+            }
+
+        ?>
         <?php endif?>
     
     </main>
